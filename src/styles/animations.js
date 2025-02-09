@@ -13,7 +13,7 @@ export const slideIn = keyframes`
   }
 `;
 
-export const faseIn = keyframes`
+export const fadeIn = keyframes`
   from {
     opacity: 0;
   } 
@@ -27,7 +27,7 @@ export const dragAnimation = keyframes`
     transform: scale(1);
   }
   50% {
-    transform: scale(1.02);
+    transform: scale(1.1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   100% {

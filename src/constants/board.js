@@ -3,15 +3,15 @@
 export const DEFAULT_COLUMNS = {
   TO_DO: {
     id: "todo",
-    title: "시작 전",
+    columnTitle: "시작 전",
   },
   IN_PROGRESS: {
     id: "in-progress",
-    title: "진행 중",
+    columnTitle: "진행 중",
   },
   DONE: {
     id: "done",
-    title: "완료",
+    columnTitle: "완료",
   },
 };
 
