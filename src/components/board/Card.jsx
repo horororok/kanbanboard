@@ -1,10 +1,10 @@
-// 개별 카드 컴포넌트
-const Card = () => {
-  return (
-    <>
-      <div>카드</div>
-    </>
-  );
+import { useCard } from "../../hooks/useCard";
+import CardView from "./CardView";
+
+const Card = (props) => {
+  const { state, actions } = useCard(props);
+
+  return <CardView {...props} state={state} actions={actions} />;
 };
 
 export default Card;

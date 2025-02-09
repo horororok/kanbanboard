@@ -1,4 +1,5 @@
 import styled, { useTheme } from "styled-components";
+import { slideIn } from "../../styles/animations";
 
 const Notification = ({ handleDarkMode, onClose }) => {
   const theme = useTheme();
@@ -44,6 +45,11 @@ const NotificationContainer = styled.div`
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   z-index: 101;
+  animation: ${slideIn} 0.3s ease;
+
+  @media screen and (max-width: 768px) {
+    width: 180px;
+  }
 `;
 
 const NotificationItem = styled.div`
@@ -53,5 +59,10 @@ const NotificationItem = styled.div`
   &:hover {
     background-color: ${({ theme }) =>
       theme.colors[theme.mode].background.secondary};
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 10px 14px;
+    font-size: 14px;
   }
 `;

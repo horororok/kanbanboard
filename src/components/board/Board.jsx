@@ -1,9 +1,11 @@
-// 전체 보드 상태 관리
+import { useBoardActions } from "../../hooks/useBoardActions";
+import BoardView from "./BoardView";
+
 const Board = () => {
+  const { board, actions, dragHandlers } = useBoardActions();
+
   return (
-    <>
-      <div>보드</div>
-    </>
+    <BoardView board={board} actions={actions} dragHandlers={dragHandlers} />
   );
 };
 

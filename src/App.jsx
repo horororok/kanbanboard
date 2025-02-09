@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider, styled } from "styled-components";
 import { theme } from "./styles/theme";
 import { GlobalStyle } from "./styles/GlobalStyle";
 import Board from "./components/board/Board";
@@ -16,10 +16,24 @@ function App() {
   return (
     <ThemeProvider theme={{ ...theme, mode: isDarkMode ? "dark" : "light" }}>
       <GlobalStyle />
-      <Nav handleDarkMode={handleDarkMode} />
-      <Board />
+      <Container>
+        <Nav handleDarkMode={handleDarkMode} />
+        <Board />
+      </Container>
     </ThemeProvider>
   );
 }
 
 export default App;
+
+const Container = styled.div`
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+
+  @media screen and (max-width: 768px) {
+    height: auto;
+  }
+`;

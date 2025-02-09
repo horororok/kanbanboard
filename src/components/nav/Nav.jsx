@@ -37,23 +37,40 @@ export default Nav;
 
 const Container = styled.div`
   width: 100%;
+  height: 88px;
+
   display: flex;
   justify-content: center;
+  background-color: ${({ theme }) =>
+    theme.colors[theme.mode].background.primary};
+
+  @media screen and (max-width: 768px) {
+    height: 64px;
+  }
 `;
 
 const Navbar = styled.div`
   max-width: 1200px;
   margin: auto 0;
   width: 100%;
-  height: 88px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 16px;
+
+  @media screen and (max-width: 768px) {
+    padding: 0 12px;
+  }
 `;
 
 const Logo = styled.img`
   width: 162px;
   height: 36px;
+
+  @media screen and (max-width: 768px) {
+    width: 120px;
+    height: 28px;
+  }
 `;
 
 const Profile = styled.div`
@@ -62,12 +79,21 @@ const Profile = styled.div`
   justify-content: center;
   gap: 12px;
   position: relative;
+
+  @media screen and (max-width: 768px) {
+    gap: 8px;
+  }
 `;
 
 const ProfileImage = styled.img`
   width: 36px;
   height: 36px;
   cursor: pointer;
+
+  @media screen and (max-width: 768px) {
+    width: 32px;
+    height: 32px;
+  }
 `;
 
 const ProfileName = styled.div`
@@ -79,6 +105,11 @@ const ProfileName = styled.div`
   text-align: center;
   width: 93px;
   height: auto;
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+    width: 80px;
+  }
 `;
 
 const ArrowDownIcon = styled.img`

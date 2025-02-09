@@ -1,9 +1,18 @@
-// 컬럼 및 카드 목록 관리
-const Column = () => {
+import { useColumn } from "../../hooks/useColumn";
+import ColumnView from "./ColumnView";
+
+const Column = (props) => {
+  const { isDefaultColumn, isEditingTitle, editedTitle, actions } =
+    useColumn(props);
+
   return (
-    <>
-      <div>칼럼</div>
-    </>
+    <ColumnView
+      {...props}
+      isDefaultColumn={isDefaultColumn}
+      isEditingTitle={isEditingTitle}
+      editedTitle={editedTitle}
+      actions={actions}
+    />
   );
 };
 
