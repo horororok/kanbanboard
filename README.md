@@ -20,7 +20,7 @@ Kanban Board는 **프로젝트 및 작업 관리**를 위한 웹 애플리케이
 - **반응형 디자인 지원**: 모바일, 태블릿, 데스크톱 환경에서 최적의 UI를 제공합니다.
 - **태그 관리**: 카드별 태그를 추가하고 색상을 지정할 수 있습니다.
 - **애니메이션 효과**: 드래그 시 부드러운 이동 효과 및 카드 추가/삭제 시 애니메이션을 제공합니다.
-- **배포**: Vercel 을 이용한 배포 예정.
+- **배포**: Vercel 을 이용한 배포.
 
 ## 🛠 기술 스택
 
@@ -33,31 +33,31 @@ Kanban Board는 **프로젝트 및 작업 관리**를 위한 웹 애플리케이
 ```sh
 src/
 ├── components/           # 재사용 가능한 컴포넌트들
-│   ├── Board/           # 칸반보드 관련 컴포넌트
-│   │   ├── Board.jsx    # 메인 보드 컴포넌트
-│   │   ├── Column.jsx   # 컬럼 컴포넌트
-│   │   └── Card.jsx     # 카드 컴포넌트
+│   ├── board/           # 칸반보드 관련 컴포넌트
+│   │   ├── Board.jsx         # 보드 컴포넌트
+│   │   ├── BoardView.jsx     # 보드 뷰 컴포넌트
+│   │   ├── Column.jsx        # 컬럼 컴포넌트
+│   │   ├── ColumnView.jsx    # 컬럼 뷰 컴포넌트
+│   │   ├── Card.jsx          # 카드 컴포넌트
+│   │   └── CardView.jsx      # 카드 뷰
 │   ├── common/          # 공통 컴포넌트
-│   │   ├── Button/      # 버튼 컴포넌트
-│   │   │   ├── Button.jsx
-│   │   │   └── Button.styles.js
-│   │   └── Modal/       # 모달 컴포넌트
-│   │       ├── Modal.jsx
-│   │       └── Modal.styles.js
-│   └── Tag/             # 태그 관련 컴포넌트
+│   │   ├── Notification.jsx/      # 알림 컴포넌트
+│   └── tag/             # 태그 관련 컴포넌트
 │       ├── Tag.jsx
 │       └── TagPicker.jsx
 ├── hooks/               # 커스텀 훅
 │   ├── useDragAndDrop.js     # 드래그 앤 드롭 로직
 │   ├── useLocalStorage.js    # 로컬 스토리지 관리
-│   └── useBoard.js           # 보드 상태 관리
+│   ├── useCard.js            # 카드 로직 관리
+│   ├── useColumn.js          # 칼럼 로직 관리
+│   ├── useBoardActions.js    # 보드 로직 관리
+│   └── useBoard.js           # 보드 전반적 상태 관리
 ├── styles/              # 스타일 관련 파일들
 │   ├── GlobalStyle.js        # 전역 스타일
 │   ├── theme.js             # 테마 설정
 │   └── animations.js        # 애니메이션 정의
 ├── utils/               # 유틸리티 함수들
-│   ├── localStorage.js       # 로컬 스토리지 헬퍼
-│   └── dragAndDrop.js       # 드래그 앤 드롭 헬퍼
+│   └── localStorage.js       # 로컬 스토리지 헬퍼
 ├── constants/           # 상수 정의
 │   └── board.js             # 보드 관련 상수
 ├── App.jsx             # 앱 진입점
@@ -88,7 +88,7 @@ npm run dev
 
 ### 4. 배포
 
-배포 방법은 선택한 서비스에 따라 다를 수 있습니다. Vercel
+[칸반보드 보러가기](https://kanbanboard-horororok.vercel.app/)
 
 ## 📜 라이선스
 
